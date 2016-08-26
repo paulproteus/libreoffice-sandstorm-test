@@ -252,11 +252,11 @@ const myCommand :Spk.Manifest.Command = (
     # Note that this defines the *entire* environment seen by your app.
     (key = "PATH", value = "/usr/local/bin:/usr/bin:/bin"),
     (key = "SANDSTORM", value = "1"),
-    (key = "HOME", value = "/var"),
-    (key = "LD_LIBRARY_PATH", value = "/usr/lib/libreoffice/program"),
-    (key = "SYSUSERCONFIG", value = "/var"),
-    (key = "STORAGE_PATH", value = "/var/davros/data"),
-    (key = "TEMP_STORAGE_PATH", value = "/var/davros/tmp"),
+    # (key = "HOME", value = "/var"),
+    # (key = "LD_LIBRARY_PATH", value = "/usr/lib/libreoffice/program"),
+    # (key = "SYSUSERCONFIG", value = "/var"),
+    # (key = "STORAGE_PATH", value = "/var/davros/data"),
+    # (key = "TEMP_STORAGE_PATH", value = "/var/davros/tmp"),
     (key = "TMPDIR", value = "/var/davros/tmp"),
     # Export SANDSTORM=1 into the environment, so that apps running within Sandstorm
     # can detect if $SANDSTORM="1" at runtime, switching UI and/or backend to use
