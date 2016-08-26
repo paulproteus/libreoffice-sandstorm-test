@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Create a tmp dir in the davros path, since this demo is based on
+# Davros.
+mkdir -p /var/davros/tmp
+
 # Create a bunch of folders under the clean /var that php, nginx, and mysql expect to exist
 mkdir -p /var/lib/mysql
 mkdir -p /var/lib/nginx
