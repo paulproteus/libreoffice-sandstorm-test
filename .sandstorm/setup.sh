@@ -7,7 +7,7 @@ set -euo pipefail
 
 export DEBIAN_FRONTEND=noninteractive
 apt-get update
-apt-get install -y nginx php5-fpm php5-mysql php5-cli php5-curl git php5-dev mysql-server
+apt-get install -y nginx php5-fpm php5-mysql php5-cli php5-curl git php5-dev mysql-server libreoffice unoconv
 service nginx stop
 service php5-fpm stop
 service mysql stop
@@ -42,3 +42,12 @@ innodb_log_file_size = 1048576
 # Set the main data file to grow by 1MB at a time, rather than 8MB at a time.
 innodb_autoextend_increment = 1
 EOF
+
+
+### TOTAL HACK ALERT
+###
+### in unoconv's python code, modify the argv with which we launch LibreOffice.
+## First replace the single-hyphen version
+replace 'office.binary, "-headless",' 'office.binary, "-env:UserInstallation=file:///var/home/donuts-libreoffice", "-headless",' -- /usr/bin/unoconv
+## Then replace the double hyphen version
+replace 'office.binary, "--headless",' 'office.binary, "-env:UserInstallation=file:///var/home/donuts-libreoffice", "--headless",' -- /usr/bin/unoconv

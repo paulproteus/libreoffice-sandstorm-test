@@ -6,6 +6,8 @@
 href="https://www.acm.org/sigs/publications/pubform.doc" target="_blank">Proceedings Template - WORD
 - ACM</a>.</p>
 
+<p>If it doens't work, try <strong>resubmitting</strong>; for some reason, this helps.</p>
+
 <form action="/convert.php" method="POST" enctype="multipart/form-data">
 
 File: <input type="file" name="file">
