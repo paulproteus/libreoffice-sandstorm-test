@@ -47,7 +47,7 @@ EOF
 ### TOTAL HACK ALERT
 ###
 ### in unoconv's python code, modify the argv with which we launch LibreOffice.
-## First replace the single-hyphen version
+## First replace the single-hyphen version -- this only applies to old versions of libreoffice/apache openoffice.
 replace 'office.binary, "-headless",' 'office.binary, "-env:UserInstallation=file:///var/home/donuts-libreoffice", "-headless",' -- /usr/bin/unoconv
-## Then replace the double hyphen version
+## Then replace the double hyphen version -- this actually applies to the version of libreoffice we have installed.
 replace 'office.binary, "--headless",' 'office.binary, "-env:UserInstallation=file:///var/home/donuts-libreoffice", "--headless",' -- /usr/bin/unoconv
