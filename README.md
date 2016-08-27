@@ -6,14 +6,15 @@ This is a **PHP-based Sandstorm app** that uses LibreOffice to convert files to 
 
 - The app **works.**
 
-- However, it modifies `unoconv` to hard-code new argv data to pass into LibreOffice.
+- It once modified `unoconv` to hard-code new argv data to pass into LibreOffice; now it instead
+  passes data via an environment variable.
 
 - Also, you **must** do the conversion twice, seemingly. This is probably because I'm using an old
   version of unoconv that doesn't auto-restart LibreOffice after exit code 81 (which means normal
   restart).
 
-- Therefore it is a very hacky demo app, and you should not assume that the way it does things are
-  generally acceptable. It does work, though!
+- It is a somewhat hacky demo app. You should not assume that the way it does things are generally
+  acceptable. It does work, though!
 
 ## Context
 
@@ -27,6 +28,7 @@ modifying unoconv.
 
 - Can we use an environment variable to sidestep the need for the `unoconv` hackery? If so, which
   env var?
+    - **Yes!** This now uses an environment variable. Note that the `file://` prefix is needed!
 
 - Why did it crash earlier? It seems like libreoffice is allergic to a home var that is fewer than 2
   path levels deep (e.g. /var/home vs. /var) but I'm not really sure.
