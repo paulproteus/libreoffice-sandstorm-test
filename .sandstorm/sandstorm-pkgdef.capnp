@@ -252,6 +252,7 @@ const myCommand :Spk.Manifest.Command = (
     # Note that this defines the *entire* environment seen by your app.
     (key = "PATH", value = "/usr/local/bin:/usr/bin:/bin"),
     (key = "SANDSTORM", value = "1"),
+    (key = "UserInstallation", value = "file:///var/libreoffice/userinstallation"),
     # (key = "HOME", value = "/var"),
     # (key = "LD_LIBRARY_PATH", value = "/usr/lib/libreoffice/program"),
     # (key = "SYSUSERCONFIG", value = "/var"),

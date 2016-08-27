@@ -42,12 +42,3 @@ innodb_log_file_size = 1048576
 # Set the main data file to grow by 1MB at a time, rather than 8MB at a time.
 innodb_autoextend_increment = 1
 EOF
-
-
-### TOTAL HACK ALERT
-###
-### in unoconv's python code, modify the argv with which we launch LibreOffice.
-## First replace the single-hyphen version -- this only applies to old versions of libreoffice/apache openoffice.
-replace 'office.binary, "-headless",' 'office.binary, "-env:UserInstallation=file:///var/home/donuts-libreoffice", "-headless",' -- /usr/bin/unoconv
-## Then replace the double hyphen version -- this actually applies to the version of libreoffice we have installed.
-replace 'office.binary, "--headless",' 'office.binary, "-env:UserInstallation=file:///var/home/donuts-libreoffice", "--headless",' -- /usr/bin/unoconv
